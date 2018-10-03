@@ -3,10 +3,14 @@ kind: Job
 metadata:
   name: test-job
   labels:
+    app: job-killer
     job-killer: kill-me
 spec:
   parallelism: 1
   template:
+    metadata:
+      labels:
+        app: job-killer
     spec:
       containers:
       - name: test-job
