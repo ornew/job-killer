@@ -6,6 +6,9 @@ metadata:
     app: job-killer
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: job-killer
   template:
     metadata:
       name: job-killer
@@ -16,3 +19,9 @@ spec:
         - name: job-killer
           image: ornew/job-killer
           imagePullPolicy: Always
+          env:
+          - name: SLACK_WEBHOOK_URL
+            valueFrom:
+              secretKeyRef:
+                name: slack
+                key: slack_webhook_url
