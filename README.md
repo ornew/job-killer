@@ -8,7 +8,7 @@ Kubernetes Custom Controller
 
 ```
 $ kubectl create secret generic \
-    test --from-literal=slack_webhook_url=https://hooks.slack.com/services/...
+    slack --from-literal=slack_webhook_url=https://hooks.slack.com/services/...
 $ kubectl apply -f https://raw.githubusercontent.com/ornew/job-killer/master/job-killer.yaml
 ```
 
